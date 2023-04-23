@@ -30,19 +30,18 @@ if source_audio is not None:
 
     if source_audio.size < 25_000_000:  # 25MB
         st.success("Audio file uploaded successfully")
-
+        st.audio(source_audio)
         transcribe_button = st.button("Transcribe")
 
         if transcribe_button:
             st.session_state.transcribed_text = get_transcription(source_audio)
             st.success("Audio file transcribed successfully")
-
-
     else:
         st.error("File size too large. Please upload a file less than 10MB.")
 
-with st.expander("Transcribed text"):
-    st.write(st.session_state.transcribed_text)
+if st.session_state.transcribed_text:
+    with st.expander("Transcribed text"):
+        st.write(st.session_state.transcribed_text)
 
 st.subheader("Step 3. Query the text")
 
