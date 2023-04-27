@@ -15,10 +15,10 @@ def get_transcription(audio) -> str:
     return transcribe_audio_small(audio)
 
 
-st.title("Transcribler")
+st.title("Transcribbler")
 
 """
-Welcome to Transcribler, a tool to transcribe audio files to text and then query that text with AI.
+Welcome to Transcribbler, a tool to transcribe audio files to text and then query that text with AI.
 """
 
 st.subheader("Step 1. Upload an audio file")
